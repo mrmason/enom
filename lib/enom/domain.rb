@@ -101,6 +101,15 @@ module Enom
       response.each {|d| domains << Domain.new(d) }
       return domains
     end
+    
+    # Find all expired domains in the account
+    def self.all_expired(options = {})
+      response = Client.request("Command" => "GetExpiredDomains")["interface_response"]["GetExpiredDomains"]["DomainDetail"]
+
+      domains = []
+      response.each {|d| domains << Domain.new(d) }
+      return domains
+    end    
 
     # Purchase the domain
     def self.register!(name, options = {})
