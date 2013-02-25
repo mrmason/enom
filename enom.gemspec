@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "enom"
-  s.version = "1.1.2.1"
+  s.version = "1.1.2.2"
   s.authors = ["James Miller"]
   s.summary = %q{Ruby wrapper for the Enom API}
   s.description = %q{Enom is a Ruby wrapper and command line interface for portions of the Enom domain reseller API.}

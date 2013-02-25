@@ -104,8 +104,8 @@ module Enom
     
     # Find all expired domains in the account
     def self.all_expired(options = {})
-      response = Client.request("Command" => "GetExpiredDomains")["interface_response"]["GetExpiredDomains"]["DomainDetail"]
-      return response
+      response = Client.request("Command" => "GetExpiredDomains")["interface_response"]["DomainDetail"]
+      
       domains = []
       response.each {|d| domains << Domain.new(d) }
       return domains
